@@ -50,48 +50,6 @@ lingua-app/
             └── api.js               # Axios API wrapper
 ```
 
----
-
-## 🚀 Setup
-
-### Prerequisites
-- Node.js v18+
-- MongoDB (local or [Atlas](https://mongodb.com/atlas))
-- Anthropic API key
-
-### 1 — Install
-```bash
-git clone <your-repo>
-cd lingua-app
-npm run install:all
-```
-
-### 2 — Configure
-```bash
-cd server
-cp .env.example .env
-```
-
-Fill in `server/.env`:
-```env
-MONGODB_URI=mongodb://localhost:27017/lingua-app
-PORT=5000
-JWT_SECRET=some-long-random-string-here
-ANTHROPIC_API_KEY=your-key-from-console.anthropic.com
-CLIENT_URL=http://localhost:3000
-```
-
-### 3 — Run
-```bash
-# From root
-npm run dev
-```
-
-- **Frontend**: http://localhost:3000
-- **Backend**: http://localhost:5000
-
----
-
 ## ✨ Features
 
 ### 📖 AI-Generated Lessons
@@ -152,7 +110,3 @@ npm run dev
 - The app is language-agnostic — Claude handles all languages
 - Add more options to the `LANGUAGES` array in `AuthPage.js`
 
-**Deploy:**
-- Backend: Railway or Render
-- Frontend: Vercel or Netlify (`npm run build` in `/client`)
-- DB: MongoDB Atlas (free tier)
