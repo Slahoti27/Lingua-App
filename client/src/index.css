@@ -1,0 +1,143 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Warm earthy palette */
+  --cream: #FAF7F2;
+  --cream2: #F3EDE3;
+  --cream3: #EAE0D0;
+  --terracotta: #C4622D;
+  --terracotta-light: #E8845A;
+  --terracotta-dark: #9E4A1E;
+  --forest: #2D5A3D;
+  --forest-light: #4A8960;
+  --forest-pale: #E8F2EC;
+  --gold: #D4A843;
+  --gold-light: #F5D98A;
+  --gold-pale: #FDF6E0;
+  --charcoal: #2C2520;
+  --charcoal2: #4A3F38;
+  --stone: #8C7B72;
+  --stone-light: #B5A89E;
+  --stone-pale: #F0EBE5;
+
+  /* Semantic */
+  --bg: var(--cream);
+  --surface: #FFFFFF;
+  --surface2: var(--cream2);
+  --border: var(--cream3);
+  --text: var(--charcoal);
+  --text2: var(--charcoal2);
+  --text3: var(--stone);
+  --accent: var(--terracotta);
+  --accent-light: var(--terracotta-light);
+  --success: var(--forest);
+  --success-light: var(--forest-light);
+  --warning: var(--gold);
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: 'Fraunces', serif; }
+button { cursor: pointer; border: none; outline: none; font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+input, textarea, select { font-family: inherit; outline: none; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--cream3); border-radius: 3px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes pop {
+  0%   { transform: scale(0.9); opacity: 0; }
+  70%  { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.fade-up  { animation: fadeUp 0.35s ease forwards; }
+.fade-in  { animation: fadeIn 0.25s ease forwards; }
+.pop      { animation: pop 0.3s cubic-bezier(.34,1.56,.64,1) forwards; }
+.spin     { animation: spin 1s linear infinite; }
+.float    { animation: float 3s ease-in-out infinite; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 10px 22px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; transition: all 0.2s;
+}
+.btn-primary {
+  background: var(--accent); color: white;
+  box-shadow: 0 2px 12px rgba(196,98,45,.3);
+}
+.btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(196,98,45,.4); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-outline {
+  background: transparent; color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+.btn-outline:hover { background: rgba(196,98,45,.06); }
+
+.btn-success {
+  background: var(--forest); color: white;
+  box-shadow: 0 2px 12px rgba(45,90,61,.25);
+}
+.btn-success:hover { background: var(--forest-light); }
+
+.btn-ghost {
+  background: var(--surface2); color: var(--text2);
+}
+.btn-ghost:hover { background: var(--cream3); }
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 16px rgba(44,37,32,.06);
+}
+
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 600;
+}
+.badge-terracotta { background: rgba(196,98,45,.12); color: var(--terracotta); }
+.badge-forest     { background: rgba(45,90,61,.12); color: var(--forest); }
+.badge-gold       { background: rgba(212,168,67,.15); color: #a07a1a; }
+.badge-stone      { background: var(--stone-pale); color: var(--stone); }
+
+.skel {
+  background: linear-gradient(90deg, var(--cream2) 25%, var(--cream3) 50%, var(--cream2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}

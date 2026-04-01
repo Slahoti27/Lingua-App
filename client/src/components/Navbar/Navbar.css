@@ -1,0 +1,85 @@
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 32px; height: 64px;
+  background: rgba(250,247,242,.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1.5px solid var(--border);
+}
+
+.navbar-brand {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer; margin-right: 16px;
+}
+.navbar-logo { font-size: 22px; }
+.navbar-title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: -0.5px;
+}
+
+.navbar-links {
+  display: flex; align-items: center; gap: 2px; flex: 1;
+}
+
+.nav-link {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 10px;
+  font-size: 13px; font-weight: 500;
+  color: var(--text3); background: transparent;
+  transition: all 0.15s;
+}
+.nav-link:hover { background: var(--cream2); color: var(--text2); }
+.nav-link--active { background: rgba(196,98,45,.1); color: var(--terracotta); font-weight: 600; }
+
+.nav-icon { font-size: 15px; }
+
+.navbar-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+
+.navbar-xp {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; color: var(--gold);
+  cursor: default;
+}
+.xp-bar {
+  width: 60px; height: 5px; border-radius: 3px;
+  background: var(--cream3); overflow: hidden;
+}
+.xp-fill {
+  height: 100%; border-radius: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--terracotta-light));
+  transition: width 0.4s ease;
+}
+.xp-label { white-space: nowrap; }
+
+.navbar-streak {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 13px; font-weight: 700;
+  color: var(--terracotta);
+}
+.streak-num { font-family: 'Fraunces', serif; }
+
+.navbar-user { position: relative; cursor: pointer; }
+.user-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--terracotta), var(--gold));
+  color: white; font-weight: 700; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.user-menu {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: 14px; padding: 12px;
+  min-width: 180px; box-shadow: 0 8px 32px rgba(44,37,32,.12);
+}
+.user-menu-name { font-weight: 600; font-size: 13px; }
+.user-menu-email { font-size: 11px; color: var(--text3); margin-bottom: 8px; }
+.user-menu hr { border: none; border-top: 1px solid var(--border); margin: 8px 0; }
+.user-menu button {
+  width: 100%; text-align: left; padding: 6px 8px;
+  font-size: 13px; color: var(--terracotta);
+  background: transparent; border-radius: 8px;
+}
+.user-menu button:hover { background: var(--cream2); }

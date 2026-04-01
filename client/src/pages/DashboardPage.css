@@ -1,0 +1,86 @@
+.dashboard {
+  max-width: 820px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+.dash-greeting {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.dash-greeting h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+.dash-greeting p { font-size: 14px; color: var(--text3); }
+.dash-greeting strong { color: var(--terracotta); }
+
+.dash-streak-card {
+  display: flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--terracotta), var(--gold));
+  color: white; padding: 12px 20px; border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(196,98,45,.3);
+}
+.dash-streak-fire { font-size: 28px; }
+.dash-streak-num { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; line-height: 1; }
+.dash-streak-label { font-size: 11px; opacity: 0.8; }
+
+.dash-daily { }
+.dash-daily-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 12px; }
+.dash-daily h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.dash-daily p { font-size: 12px; color: var(--text3); }
+.dash-daily-pct { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; color: var(--terracotta); }
+
+.dash-progress-bar {
+  height: 8px; background: var(--cream3); border-radius: 4px; overflow: hidden; margin-bottom: 8px;
+}
+.dash-progress-fill {
+  height: 100%; border-radius: 4px;
+  background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+  transition: width 0.6s cubic-bezier(.4,0,.2,1);
+}
+.dash-progress-fill--gold {
+  background: linear-gradient(90deg, var(--gold), var(--terracotta-light));
+}
+
+.dash-goal-achieved {
+  font-size: 13px; color: var(--forest); font-weight: 600;
+  background: var(--forest-pale); padding: 6px 12px; border-radius: 8px;
+  display: inline-block;
+}
+
+.dash-stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+}
+.dash-stat {
+  text-align: center; padding: 20px 16px;
+}
+.dash-stat-icon { font-size: 24px; margin-bottom: 8px; }
+.dash-stat-value { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 700; color: var(--terracotta); }
+.dash-stat-label { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+.dash-level h3 { font-size: 15px; font-weight: 700; }
+.dash-level p { font-size: 12px; color: var(--text3); margin-top: 4px; }
+.dash-level-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.dash-next-level { font-size: 12px; color: var(--gold); font-weight: 600; }
+
+.dash-actions h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+.dash-action-grid { display: flex; flex-direction: column; gap: 10px; }
+
+.dash-action-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px; border-radius: 16px;
+  background: var(--surface); border: 1.5px solid var(--border);
+  text-align: left; transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(44,37,32,.04);
+}
+.dash-action-card:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(44,37,32,.1); }
+
+.dash-action-card--terracotta:hover { border-color: var(--terracotta); }
+.dash-action-card--forest:hover { border-color: var(--forest); }
+.dash-action-card--gold:hover { border-color: var(--gold); }
+
+.dash-action-icon { font-size: 28px; flex-shrink: 0; }
+.dash-action-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.dash-action-sub { font-size: 12px; color: var(--text3); }
+.dash-action-arrow { margin-left: auto; font-size: 18px; color: var(--stone-light); }
+
+@media (max-width: 640px) {
+  .dash-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}

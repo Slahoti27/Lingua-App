@@ -1,0 +1,84 @@
+.lessons-page, .lesson-page { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.lessons-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.lessons-header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+.lessons-header p { font-size: 13px; color: var(--text3); }
+.lessons-loading, .lessons-empty { text-align: center; color: var(--text3); padding: 60px; font-size: 14px; }
+
+.lessons-gen h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+.gen-row { display: flex; gap: 14px; }
+.gen-row .field { flex: 1; }
+
+.lessons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+
+.lesson-card { display: flex; flex-direction: column; gap: 8px; transition: transform 0.15s, box-shadow 0.15s; }
+.lesson-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(44,37,32,.1); }
+.lesson-card--done { opacity: 0.8; }
+.lesson-card-top { display: flex; align-items: center; justify-content: space-between; }
+.lesson-xp { font-size: 11px; font-weight: 700; color: var(--gold); }
+.lesson-card h3 { font-size: 15px; font-weight: 700; }
+.lesson-card p { font-size: 12px; color: var(--text3); flex: 1; }
+.lesson-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+.lesson-topic { font-size: 11px; color: var(--stone-light); }
+.btn-sm { padding: 7px 14px; font-size: 12px; }
+
+/* Active lesson */
+.lesson-header {
+  display: flex; align-items: center; gap: 12px;
+}
+.lesson-progress-bar {
+  flex: 1; height: 6px; background: var(--cream3); border-radius: 3px; overflow: hidden;
+}
+.lesson-progress-bar div {
+  height: 100%; background: var(--terracotta); transition: width 0.4s;
+}
+
+.lesson-exercise { padding: 32px; }
+.ex-type-badge {
+  display: inline-block; text-transform: capitalize;
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--stone); background: var(--stone-pale); padding: 3px 10px; border-radius: 20px;
+  margin-bottom: 16px;
+}
+.ex-question { font-size: 22px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+.ex-hint { font-size: 12px; color: var(--gold); margin-bottom: 14px; }
+
+.mc-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.mc-option {
+  padding: 12px 18px; border-radius: 12px; text-align: left;
+  background: var(--cream2); border: 1.5px solid var(--border);
+  font-size: 14px; transition: all 0.15s;
+}
+.mc-option:hover:not(:disabled) { border-color: var(--terracotta); background: rgba(196,98,45,.05); }
+.mc-option--selected { border-color: var(--terracotta); background: rgba(196,98,45,.08); }
+.mc-option--correct { border-color: var(--forest); background: var(--forest-pale); color: var(--forest); }
+.mc-option--wrong { border-color: var(--terracotta); background: rgba(196,98,45,.1); }
+
+.ex-input {
+  width: 100%; padding: 12px 16px; border-radius: 12px;
+  border: 1.5px solid var(--border); background: var(--cream2);
+  font-size: 14px; resize: none; margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+.ex-input:focus { border-color: var(--terracotta); background: white; }
+
+.ex-feedback {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px; border-radius: 12px; margin-bottom: 16px;
+}
+.ex-feedback--correct { background: var(--forest-pale); border: 1.5px solid rgba(45,90,61,.2); }
+.ex-feedback--wrong { background: rgba(196,98,45,.08); border: 1.5px solid rgba(196,98,45,.2); }
+.ex-feedback-icon { font-size: 20px; }
+.ex-feedback-text { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+.ex-feedback-correction { font-size: 12px; color: var(--text3); }
+
+.ex-actions { display: flex; justify-content: flex-end; }
+
+.lesson-done {
+  max-width: 340px; margin: 60px auto; text-align: center; padding: 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.lesson-done-icon { font-size: 52px; }
+.lesson-done h2 { font-size: 24px; }
+.lesson-done-score { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 700; color: var(--terracotta); }
+.lesson-done p { font-size: 13px; color: var(--text3); }
+.lesson-done-xp { font-size: 14px; font-weight: 700; color: var(--gold); background: var(--gold-pale); padding: 6px 16px; border-radius: 20px; }
